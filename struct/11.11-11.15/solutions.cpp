@@ -45,3 +45,12 @@ int main()
     // displayRectangle(myRect);
     return 0;
 }
+
+//11.15
+// Assume rptr is a pointer to a Rectangle structure. Which of the expressions, A,
+// B, or C, is equivalent to the following expression:
+// rptr->width
+// A) *rptr.width
+// B) (*rptr).width
+// C) rptr.(*width)
+// Answer: B

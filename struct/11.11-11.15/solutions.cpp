@@ -21,11 +21,23 @@ void inputRectangle(Rectangle &rect)
     cin >> rect.width;
 }
 
+Rectangle newinputRectangle()
+{
+    Rectangle rect;
+    cout << "Enter Length: ";
+    cin >> rect.length;
+    cout << "Enter Width: ";
+    cin >> rect.width;
+    return rect;
+}
+
 int main()
 {
     // Rectangle myRect{10, 5};
     Rectangle myRect;
-    inputRectangle(myRect);
+    // inputRectangle(myRect);
+    // newinputRectangle();
+    myRect = newinputRectangle();
     displayRectangle(myRect);
     return 0;
 }

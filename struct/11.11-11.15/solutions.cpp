@@ -31,13 +31,17 @@ Rectangle newinputRectangle()
     return rect;
 }
 
+
 int main()
 {
+    Rectangle myRect{10, 5};
+    Rectangle *ptr = &myRect;
+    displayRectangle(*ptr);
     // Rectangle myRect{10, 5};
-    Rectangle myRect;
+    // Rectangle myRect;
     // inputRectangle(myRect);
     // newinputRectangle();
-    myRect = newinputRectangle();
-    displayRectangle(myRect);
+    // myRect = newinputRectangle();
+    // displayRectangle(myRect);
     return 0;
 }

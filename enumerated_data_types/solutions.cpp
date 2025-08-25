@@ -5,6 +5,8 @@ enum Flower { ROSE, DAISY, PETUNIA };
 // it will display 0,1,2 in memory
 
 enum { HOBBIT, ELF = 7, DRAGON };
+// 11.23--> it is anonymous enum type
+
 int main(){
     // cout<<ROSE;
     cout << HOBBIT << " " << ELF << " " << DRAGON << endl;

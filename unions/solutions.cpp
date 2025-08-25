@@ -30,4 +30,4 @@ int main()
     return 0;
 }
 
-// the answer will show 0 and 10 only because unions overwrite the previous data because of storing all the memory address as the largest of its member
+// the answer will show 0 and 10 only because unions overwrite the previous data because of storing all the memory address as the largest of its member (int in this case)

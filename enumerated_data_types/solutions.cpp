@@ -23,8 +23,17 @@ enum Letters
     Y,
     X
 };
+
+enum Color { RED, GREEN, BLUE };
+
 int main()
+
 {
+    Color c;
+    // c = 0;  error, we should use static cast operator
+
+    c = static_cast<Color>(0);
+    cout<<c<<endl;
     // cout<<ROSE;
     cout << HOBBIT << " " << ELF << " " << DRAGON << endl;
     /*

@@ -11,3 +11,9 @@
 Input Validation: Only accept temperatures within the range between –100 and +140
 degrees Fahrenheit.
 ```
+---
+## Weather Statistics Modification
+Modify the program that you wrote for Programming Challenge 4 so it defines an
+enumerated data type with enumerators for the months (JANUARY, FEBRUARY, etc.).
+- The program should use the enumerated type to step through the elements of the
+array.

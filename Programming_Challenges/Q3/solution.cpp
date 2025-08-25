@@ -3,6 +3,22 @@ using namespace std;
 
 const int TotalMonths = 12;
 
+enum Months
+{
+    January,
+    February,
+    March,
+    April,
+    May,
+    June,
+    July,
+    August,
+    September,
+    October,
+    November,
+    December
+};
+
 struct WeatherData
 {
     double TotalRainfall;
@@ -13,7 +29,7 @@ struct WeatherData
 
 void inputData(WeatherData d[])
 {
-    for (int i = 0; i < TotalMonths; i++)
+    for (int i = January; i <= December; i++)
     {
         cout << "Enter data for month: " << i + 1 << endl;
         cout << "Enter total rainfall: " << endl;
@@ -34,7 +50,7 @@ void inputData(WeatherData d[])
 
 void showData(WeatherData d[])
 {
-    for (int i = 0; i < TotalMonths; i++)
+    for (int i = January; i <= December; i++)
     {
         cout << "------------" << endl;
         cout << "Month " << i + 1 << ": "
@@ -42,7 +58,6 @@ void showData(WeatherData d[])
              << "High=" << d[i].HighTemperature << " | "
              << "Low=" << d[i].LowTemperature << " | "
              << "Avg=" << d[i].AvgTemperature << endl;
-        cout << "------------" << endl;
     }
 }
 

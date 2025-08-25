@@ -17,6 +17,7 @@ int main()
     {
         t1[i].whole = 2.37;
         t1[i].letter = 'A';
+        t1[i].real = 10;
     }
     
     return 0;

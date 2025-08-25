@@ -10,6 +10,8 @@ union ThreeTypes
 
 int main()
 {
-
+    const int size = 50;
+    ThreeTypes t1[size];
+    
     return 0;
 }

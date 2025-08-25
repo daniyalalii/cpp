@@ -24,18 +24,28 @@ enum Letters
     X
 };
 
-enum Color { RED, GREEN, BLUE };
+enum Color
+{
+    RED,
+    GREEN,
+    BLUE
+};
 
 int main()
 
 {
-    Color c;
+    Color c = RED;
+    // c++; error
+    c = static_cast<Color>(c + 1);
+    cout << c << endl;
+
+    // Color c;
     // c = 0;  error, we should use static cast operator
 
-    c = static_cast<Color>(0);
-    cout<<c<<endl;
+    // c = static_cast<Color>(0);
+    // cout<<c<<endl;
     // cout<<ROSE;
-    cout << HOBBIT << " " << ELF << " " << DRAGON << endl;
+    // cout << HOBBIT << " " << ELF << " " << DRAGON << endl;
     /*
     It will display these values as they are changed
     HOBBIT-->0
@@ -43,7 +53,8 @@ int main()
     DRAGON-->0
     */
     if (Z > X)
-        cout << "Z is greater than X. \n"; // this will not be printed
+        cout
+            << "Z is greater than X. \n"; // this will not be printed
     else
         cout << "Z is not greater than X. \n"; // this will be printed
     return 0;

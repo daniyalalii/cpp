@@ -16,6 +16,7 @@ int main()
     for (int i = 0; i < size; i++)
     {
         t1[i].whole = 2.37;
+        t1[i].letter = 'A';
     }
     
     return 0;

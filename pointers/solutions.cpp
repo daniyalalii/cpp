@@ -12,13 +12,14 @@ int main()
     // float number = 10.2;
     // float *fltptr = &number;
     // cout<<"Value inside float ptr: "<<*fltptr<<endl;
-    const int size = 10;
-    int arr[size] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    int *ptr = arr;
-    for (int x = 0; x < 10; x++)
-    {
-        cout << *(ptr + x)<<" ";
-    }
+    // const int size = 10;
+    // int arr[size] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    // int *ptr = arr;
+    // for (int x = 0; x < 10; x++)
+    // {
+    //     cout << *(ptr + x)<<" ";
+    // }
+
     return 0;
 }
 
@@ -60,4 +61,11 @@ value inside z is multiplied with 2, z-->140
 then the last cout prints value of updated x,y and z
 )
 500 300 140
+*/
+
+/*
+if pointer is pointing to memory address 12000
+then this line will point to, 
+ptr += 10;
+answer: 12040
 */

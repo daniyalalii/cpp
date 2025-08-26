@@ -10,7 +10,7 @@
 int x = 50, y = 60, z = 70;
 int *ptr = nullptr;
 cout << x << " " << y << " " << z << endl;
-ptr = &x;9.6 Comparing Pointers 511
+ptr = &x;
 *ptr *= 10;
 ptr = &y;
 *ptr *= 5;

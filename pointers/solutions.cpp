@@ -9,15 +9,16 @@ int main()
     // int *ptr = &count;
     // cout<<"Address using pointer: "<<ptr;
 
-    float number = 10.2;
-    float *fltptr = &number;
-    cout<<"Value inside float ptr: "<<*fltptr<<endl;
+    // float number = 10.2;
+    // float *fltptr = &number;
+    // cout<<"Value inside float ptr: "<<*fltptr<<endl;
+
     return 0;
 }
 
 /*
 List three uses of the * symbol in C++
-1- used in multiplying the numbers: 
+1- used in multiplying the numbers:
     2*2 = 4
 2- use for pointers to point a variable's memory address:
     int num;
@@ -26,5 +27,31 @@ List three uses of the * symbol in C++
     (like in above case if num contains value 10, then)
     num = 10;
     cout<<*ptr;
-    it will print 10, the value of num, as ptr points to address of num.    
+    it will print 10, the value of num, as ptr points to address of num.
+*/
+
+/*
+Code:
+int x = 50, y = 60, z = 70;
+int *ptr = nullptr;
+cout << x << " " << y << " " << z << endl;
+ptr = &x;
+*ptr *= 10;
+ptr = &y;
+*ptr *= 5;
+ptr = &z;
+*ptr *= 2;
+cout << x << " " << y << " " << z << endl;
+Output:
+(first cout will print this)
+50 60 70
+(then pointer is pointing to x address,
+value inside x is multiplied by 10, x-->500
+then pointer addresses to y
+value inside y is multiplied with 5, y-->300
+then pointer points to address z
+value inside z is multiplied with 2, z-->140
+then the last cout prints value of updated x,y and z
+)
+500 300 140
 */

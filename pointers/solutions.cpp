@@ -69,3 +69,11 @@ then this line will point to,
 ptr += 10;
 answer: 12040
 */
+
+/*
+A) pint++;  valid
+B) −−pint;  valid
+C) pint /= 2;   invalid
+D) pint *= 4;   invalid
+E) pint += x; // Assume x is an int. valid
+*/

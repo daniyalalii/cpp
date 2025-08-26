@@ -77,3 +77,14 @@ C) pint /= 2;   invalid
 D) pint *= 4;   invalid
 E) pint += x; // Assume x is an int. valid
 */
+
+/*
+A) int ivar;
+int *iptr = &ivar;  valid
+B) int ivar, *iptr = &ivar;  valid
+C) float fvar;
+int *iptr = &fvar;  invalid
+D) int nums[50], *iptr = nums;  valid
+E) int *iptr = &ivar;
+int ivar;   invalid
+*/

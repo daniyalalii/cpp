@@ -124,3 +124,10 @@ else
 cout << "False";
 Answer: False
 */
+
+/*
+const int numbers[SIZE] = { 18, 17, 12, 14 };
+processArray(numbers, SIZE);
+A) void processArray(const int *arr, int size)  this will be correct, because a pointer to constant data type
+B) void processArray(int * const arr, int size)
+*/

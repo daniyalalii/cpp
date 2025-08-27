@@ -20,6 +20,8 @@ int main()
     //     cout << *(ptr + x)<<" ";
     // }
 
+
+
     return 0;
 }
 
@@ -87,4 +89,27 @@ int *iptr = &fvar;  invalid
 D) int nums[50], *iptr = nums;  valid
 E) int *iptr = &ivar;
 int ivar;   invalid
+*/
+
+/*
+A) if (arr < &arr[1])
+cout << "True";  
+else
+cout << "False";
+Answer: True
+B) if (&arr[4] < &arr[1])
+cout << "True";
+else
+cout << "False";
+Answer: False
+C) if (arr != &arr[2])
+cout << "True";
+else
+cout << "False";
+Answer: True
+D) if (arr != &arr[0])
+cout << "True";
+else
+cout << "False";
+Answer: False
 */

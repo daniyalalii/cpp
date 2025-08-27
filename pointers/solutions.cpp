@@ -1,8 +1,21 @@
 #include <iostream>
 using namespace std;
 
+void makeNegative(int *val)
+{
+    if (*val > 0)
+        *val = -(*val);
+}
+
 int main()
 {
+    int *ptr = new int;
+
+    *ptr = 10;
+    cout << "Before: " << *ptr << endl;
+    makeNegative(ptr);
+    cout << "After Negative: " << *ptr;
+
     // int count;
     // count = 10;
     // cout<<"Address of count is: "<<&count<<endl;
@@ -19,8 +32,6 @@ int main()
     // {
     //     cout << *(ptr + x)<<" ";
     // }
-
-
 
     return 0;
 }
@@ -67,7 +78,7 @@ then the last cout prints value of updated x,y and z
 
 /*
 if pointer is pointing to memory address 12000
-then this line will point to, 
+then this line will point to,
 ptr += 10;
 answer: 12040
 */
@@ -93,7 +104,7 @@ int ivar;   invalid
 
 /*
 A) if (arr < &arr[1])
-cout << "True";  
+cout << "True";
 else
 cout << "False";
 Answer: True

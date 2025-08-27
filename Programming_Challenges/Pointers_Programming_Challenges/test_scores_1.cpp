@@ -65,5 +65,6 @@ int main()
 
     cout << "Average: " << average << endl;
 
+    delete [] arr;
     return 0;
 }

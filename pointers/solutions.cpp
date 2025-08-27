@@ -131,3 +131,8 @@ processArray(numbers, SIZE);
 A) void processArray(const int *arr, int size)  this will be correct, because a pointer to constant data type
 B) void processArray(int * const arr, int size)
 */
+
+/*
+Null pointer: 
+it is a reserved keyword that tells that currently pointer is not pointing to any memory address,
+*/

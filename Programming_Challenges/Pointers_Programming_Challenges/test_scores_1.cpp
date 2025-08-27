@@ -22,7 +22,7 @@ double calculateAvg(int *arr, int size)
 {
     double sum = 0.0;
     double average;
-    for (int i = 0; i < size; i++)
+    for (int i = 1; i < size; i++)
     {
         sum += arr[i];
     }
@@ -32,7 +32,7 @@ double calculateAvg(int *arr, int size)
 
 void output(int *arr, int size)
 {
-    for (int i = 0; i < size; i++)
+    for (int i = 1; i < size; i++)
     {
         cout << arr[i] << " ";
     }

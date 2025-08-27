@@ -1,3 +1,7 @@
 ## Array Allocator
 ### Write a function that dynamically allocates an array of integers. The function should accept an integer argument indicating the number of elements to allocate. The function should return a pointer to the array.
 ---
+## Test Scores #1
+### Write a program that dynamically allocates an array large enough to hold a userdefined number of test scores. Once all the scores are entered, the array should be passed to a function that sorts them in ascending order. Another function should be 544 Chapter 9 PointersProgramming Challenges 545 called that calculates the average score. The program should display the sorted list of scores and averages with appropriate headings. Use pointer notation rather than array notation whenever possible. 
+- Input Validation: Do not accept negative numbers for test scores.
+---

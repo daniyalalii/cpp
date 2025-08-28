@@ -12,6 +12,10 @@ like:
             return n * fib(n-1);
         }
     }
+
+19.4:
+direction recursion measns: we call a functoin that like in fibonacci one,
+indirect recursion means: we call a recursive function and inside it there is another recursive function.
 */
 
 /*
@@ -36,4 +40,6 @@ Output:
 
 Answer: 10
 */
+
+
 

@@ -1,6 +1,6 @@
 /*
 19.1: If a recursive function never returns then, it uses a lot of memory and becomes infinite function and the program crashes.
-19.2: Base case of recursive function means a certain condition to end the program, 
+19.2: Base case of recursive function means a certain condition to end the program,
 like in fibonacci:
 when (x==0) we should return the function
 like:
@@ -13,3 +13,27 @@ like:
         }
     }
 */
+
+/*
+Output:
+    #include <iostream>
+    using namespace std;
+    // Function prototype
+    void showMe(int arg);
+    int main()
+    {
+    int num = 0;
+    showMe(num);
+    return 0;
+    }
+    void showMe(int arg)
+    {
+    if (arg < 10)
+    showMe(++arg);
+    else
+    cout << arg << endl;
+    }
+
+Answer: 10
+*/
+

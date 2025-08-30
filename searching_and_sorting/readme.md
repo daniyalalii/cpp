@@ -1,0 +1,4 @@
+## 8.1 Describe the difference between the linear search and the binary search.
+## 8.2 On average, with an array of 20,000 elements, how many comparisons will the linear search perform? (Assume the items being searched for are consistently found in the array.)
+## 8.3 With an array of 20,000 elements, what is the maximum number of comparisons the binary search will perform?
+## 8.4 If a linear search is performed on an array, and it is known that some items are searched for more frequently than others, how can the contents of the array be reordered to improve the average performance of the search?

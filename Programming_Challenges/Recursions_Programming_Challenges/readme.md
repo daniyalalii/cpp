@@ -22,3 +22,6 @@ n−−;
 7 * 4 = 4 + 4 + 4 + 4 + 4 + 4 + 4
 ```
 ---
+## Recursive Power Function
+### Write a function that uses recursion to raise a number to a power. The function should accept two arguments: the number to be raised and the exponent. Assume that the exponent is a nonnegative integer. Demonstrate the function in a program.
+---

@@ -31,3 +31,6 @@ n−−;
 ## isMember Function
 ### Write a recursive Boolean function named isMember. The function should accept two arguments: an array and a value. The function should return true if the value is found in the array, or false if the value is not found in the array. Demonstrate the function in a driver program.
 ---
+## String Reverser
+### Write a recursive function that accepts a string object as its argument and prints the string in reverse order. Demonstrate the function in a driver program.
+---

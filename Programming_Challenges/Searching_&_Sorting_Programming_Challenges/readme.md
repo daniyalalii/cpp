@@ -15,3 +15,26 @@
 62483 77777 79422 85647 93121
 ```
 ---
+## String Selection Sort
+### Modify the selectionSort function presented in this chapter so it sorts an array of strings instead of an array of ints. Test the function with a driver program. Use Program 8-8 as a skeleton to complete.
+- Program 8-8
+``` bash
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+const int NUM_NAMES = 20;
+string names[NUM_NAMES] = {"Collins, Bill", "Smith, Bart", "Allen, Jim",
+"Griffin, Jim", "Stamey, Marty", "Rose, Geri",
+"Taylor, Terri", "Johnson, Jill",
+"Allison, Jeff", "Looney, Joe", "Wolfe, Bill",
+"James, Jean", "Weaver, Jim", "Pore, Bob",
+"Rutherford, Greg", "Javens, Renee",
+"Harrison, Rose", "Setzer, Cathy",
+"Pike, Gordon", "Holland, Beth" };
+// Insert your code to complete this program
+return 0;
+}
+```
+---

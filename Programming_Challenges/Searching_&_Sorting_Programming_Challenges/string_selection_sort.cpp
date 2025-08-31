@@ -32,6 +32,31 @@ void SelectionSort(string names[], int size)
     }
 }
 
+bool binarySearch(const string names[], int size, const string &value)
+{
+    int first = 0;
+    int last = size - 1;
+    int middle;
+
+    while (first <= last)
+    {
+        middle = (first + last) / 2;
+        if (names[middle] == value)
+        {
+            return true;
+        }
+        else if (names[middle] < value)
+        {
+            first = middle + 1;
+        }
+        else
+        {
+            last = middle - 1;
+        }
+    }
+    return false;
+}
+
 int main()
 {
     const int NUM_NAMES = 20;
@@ -50,5 +75,18 @@ int main()
     SelectionSort(names, NUM_NAMES);
     cout << "After sorting" << endl;
     showNames(names, NUM_NAMES);
+
+    string Input;
+    cout << "Enter a name to search for (Last, First): ";
+    getline(cin, Input);
+
+    if (binarySearch(names, NUM_NAMES, Input))
+    {
+        cout << Input << " was found in the list." << endl;
+    }
+    else
+    {
+        cout << Input << " was not found in the list." << endl;
+    }
     return 0;
 }

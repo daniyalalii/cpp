@@ -34,3 +34,36 @@ overtime member function definitions
 In what files would you store each of these components?
 ```
 ## 13.11 What is an inline member function?
+## 13.12 Briefly describe the purpose of a constructor.
+## 13.13 Briefly describe the purpose of a destructor.
+## 13.14 A member function that is never declared with a return data type, but that may have arguments is
+```
+A) The constructor
+B) The destructor
+C) Both the constructor and the destructor
+D) Neither the constructor nor the destructor
+```
+## 13.15 A member function that is never declared with a return data type and can never have arguments is
+```
+A) The constructor
+B) The destructor
+C) Both the constructor and the destructor
+D) Neither the constructor nor the destructor
+```
+## 13.16 Destructor function names always start with
+```
+A) A number
+B) Tilde character (~)
+C) A data type name
+D) None of the above
+```
+## 13.17 A constructor that requires no arguments is called
+```
+A) A default constructor
+B) An overloaded constructor
+C) A null constructor
+D) None of the above
+```
+## 13.18 TRUE or FALSE: Constructors are never declared with a return data type.
+## 13.19 TRUE or FALSE: Destructors are never declared with a return type.
+## 13.20 TRUE or FALSE: Destructors may take any number of arguments.

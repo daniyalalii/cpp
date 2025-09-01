@@ -67,3 +67,78 @@ D) None of the above
 ## 13.18 TRUE or FALSE: Constructors are never declared with a return data type.
 ## 13.19 TRUE or FALSE: Destructors are never declared with a return type.
 ## 13.20 TRUE or FALSE: Destructors may take any number of arguments.
+## 13.21 What will the following program display on the screen?
+``` bash
+#include <iostream>
+using namespace std;
+class Tank
+{
+private:
+int gallons;
+public:
+Tank()
+{ gallons = 50; }
+Tank(int gal)
+{ gallons = gal; }
+int getGallons()
+{ return gallons; }
+};
+int main()
+{
+Tank storage[3] = { 10, 20 };
+for (int index = 0; index < 3; index++)
+cout << storage[index].getGallons() << endl;
+return 0;
+}
+```
+---
+## 13.22 What will the following program display on the screen?
+``` bash 
+#include <iostream>
+using namespace std;
+class Package
+{
+private:
+int value;
+public:
+Package()
+{ value = 7; cout << value << endl; }
+Package(int v)
+{ value = v; cout << value << endl; }
+~Package()
+{ cout << value << endl; }
+};
+int main()
+{
+Package obj1(4);
+Package obj2();
+Package obj3(2);
+return 0;
+}
+```
+---
+## 13.23 In your answer for Checkpoint 13.22 indicate for each line of output whether the line is displayed by constructor #1, constructor #2, or the destructor.
+## 13.24 Why would a member function be declared private?
+## 13.25 Define an array of three InventoryItem objects.
+## 13.26 Complete the following program so it defines an array of Yard objects. The program should use a loop to ask the user for the length and width of each Yard.
+``` bash
+#include <iostream>
+using namespace std;
+class Yard
+{
+private:
+int length, width;
+public:
+Yard()
+{ length = 0; width = 0; }
+setLength(int len)
+{ length = len; }
+setWidth(int w)
+{ width = w; }
+};
+int main()
+{
+// Finish this program
+}
+```
+---

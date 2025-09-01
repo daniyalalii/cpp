@@ -20,3 +20,17 @@ private:
 public:
 }
 ```
+---
+## 13.6 Why would you declare a class’s member variables private?
+## 13.7 When a class’s member variables are declared private, how does code outside the class store values in, or retrieve values from, the member variables?
+## 13.8 What is a class specification file? What is a class implementation file?
+## 13.9 What is the purpose of an include guard?
+## 13.10 Assume the following class components exist in a program:
+```
+BasePay class declaration
+BasePay member function definitions
+overtime class declaration
+overtime member function definitions
+In what files would you store each of these components?
+```
+## 13.11 What is an inline member function?

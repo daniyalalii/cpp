@@ -142,3 +142,22 @@ int main()
 }
 ```
 ---
+## 13.27 What is a problem domain?
+## 13.28 When designing an object-oriented application, who should write a description of the problem domain?
+## 13.29 How do you identify the potential classes in a problem domain description?
+## 13.30 What are a class’s responsibilities?
+## 13.31 What two questions should you ask to determine a class’s responsibilities?
+## 13.32 Will all of a class’s actions always be directly mentioned in the problem domain description?
+## 13.33 Look at the following description of a problem domain:
+A doctor sees patients in her practice. When a patient comes to the practice, the
+doctor performs one or more procedures on the patient. Each procedure that the
+doctor performs has a description and a standard fee. As the patient leaves the
+practice, he or she receives a statement from the office manager. The statement shows the patient’s name and address, as well as the procedures that were performed, and the total charge for the procedures.
+Assume that you are writing an application to generate a statement that can be
+printed and given to the patient.
+```
+A) Identify all of the potential classes in this problem domain.
+B) Refine the list to include only the necessary class or classes for this problem.
+C) Identify the responsibilities of the class or classes that you identified in step B.
+```
+---

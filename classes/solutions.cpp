@@ -31,6 +31,10 @@ int main()
 {
     Date d1;
     int day, month, year;
+    Date d2[5]; //or
+    Date *ptr = nullptr;
+    const int size = 5;
+    ptr = new Date [size];
     cout << "Enter date: " << endl;
     cin >> day;
     d1.setDay(day);

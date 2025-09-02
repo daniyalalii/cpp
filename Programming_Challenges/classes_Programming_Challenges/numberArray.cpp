@@ -67,6 +67,11 @@ public:
         float avg = sum / size;
         return avg;
     }
+    ~numberArray()
+    {
+        delete[] ptr;
+        ptr = nullptr;
+    }
 };
 
 int main()

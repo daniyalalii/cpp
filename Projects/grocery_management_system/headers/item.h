@@ -29,7 +29,7 @@ public:
     }
     void addQuantity(int qty)
     {
-        quantity += quantity;
+        quantity += qty;
     }
     void printItemDetails() const
     {
@@ -37,6 +37,10 @@ public:
         cout << "Barcode: " << barcode << endl;
         cout << "Item Price: " << price << endl;
         cout << "Quantity in hands: " << quantity << endl;
+    }
+    string getBarcode()
+    {
+        return barcode;
     }
     bool operator==(item &other)
     {
@@ -49,11 +53,16 @@ public:
     }
     item operator+(item &other)
     {
-        quantity += other.quantity;
+        item result = *this;
+        if (barcode == other.barcode)
+        {
+            result.quantity += other.quantity;
+        }
+        return result;
     }
     ~item()
     {
-        cout << "Distructor called" << endl;
+        cout << "Destructor called" << endl;
     }
 };
 #endif

@@ -51,6 +51,9 @@ public:
     {
         quantity += other.quantity;
     }
-    
+    ~item()
+    {
+        cout << "Distructor called" << endl;
+    }
 };
 #endif

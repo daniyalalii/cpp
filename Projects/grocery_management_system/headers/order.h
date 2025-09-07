@@ -86,6 +86,10 @@ public:
         cout << "Payment Method: " << paymentMethod << endl;
         cout << "------------------------\n";
     }
+    double getTotalPrice() const
+    {
+        return totalPrice;
+    }
 
     order operator += (const order &other)
     {

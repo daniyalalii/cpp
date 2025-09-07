@@ -13,3 +13,7 @@
 ## 14.26 Assume the class NumList has overloaded the [] operator. In the expression below, list1 is an instance of the NumList class: list1[25]
 - Rewrite the expression above to explicitly call the function that overloads the [] operator.
 ---
+## 14.27 When overloading a binary operator such as + or –, what object is passed into the operator function’s parameter?
+## 14.28 Explain why overloaded prefix and postfix ++ and −− operator functions should return a value.
+## 14.29 How does C++ tell the difference between an overloaded prefix and postfix ++ or −− operator function?
+## 14.30 Write member functions of the FeetInches class that overload the prefix and postfix −− operators. Demonstrate the functions in a simple program similar to Program 14-14.

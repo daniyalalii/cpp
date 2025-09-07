@@ -42,6 +42,18 @@ public:
     {
         return barcode;
     }
+    string getName()
+    {
+        return name;
+    }
+    double getPrice()
+    {
+        return price;
+    }
+    int getQuantity()
+    {
+        return quantity;
+    }
     bool operator==(item &other)
     {
         bool result = false;

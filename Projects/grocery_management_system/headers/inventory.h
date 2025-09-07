@@ -16,6 +16,12 @@ public:
         items.push_back(newItem);
     }
 
+    void addItem(const item &itm)
+    {
+        item *newItem = new item(itm);
+        items.push_back(newItem);
+    }
+    
     item *findItem(const string &barcode)
     {
         for (auto item : items)

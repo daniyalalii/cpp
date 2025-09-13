@@ -99,3 +99,31 @@ string hundred = "hundred";
 string thousand = "thousand";
 ```
 ### The class should have a constructor that accepts a nonnegative integer and uses it to initialize the Numbers object. It should have a member function print() that prints the English description of the Numbers object. Demonstrate the class by writing a main program that asks the user to enter a number in the proper range and then prints out its English description.
+---
+## Parking Ticket Simulator
+### For this assignment you will design a set of classes that work together to simulate a police officer issuing a parking ticket. The classes you should design are:
+
+1. The ParkedCar Class: This class should simulate a parked car. The class’s responsibilities are:
+```
+– To know the car's make, model, color, license number, and the number of minutes that the car has been parked
+```
+2. The ParkingMeter Class: This class should simulate a parking meter. The class’s only responsibility is:
+```
+– To know the number of minutes of parking time that has been purchased
+```
+3. The ParkingTicket Class: This class should simulate a parking ticket. The class’s responsibilities are:
+```
+– To report the make, model, color, and license number of the illegally parked car
+– To report the amount of the fine, which is $25 for the first hour or part of an
+hour that the car is illegally parked, plus $10 for every additional hour or part of an hour that the car is illegally parked
+– To report the name and badge number of the police officer issuing the ticket
+```
+4. The PoliceOfficer Class: This class should simulate a police officer inspecting parked cars. The class’s responsibilities are:
+```
+– To know the police officer’s name and badge number
+– To examine a ParkedCar object and a ParkingMeter object, and determine
+whether the car's time has expired
+– To issue a parking ticket (generate a ParkingTicket object) if the car’s time has expired
+```
+### Write a program that demonstrates how these classes collaborate.
+---

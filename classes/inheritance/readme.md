@@ -32,3 +32,64 @@ A) When an object of the Circle class is created, what are its private members?
 B) When an object of the Circle class is created, what are its public members?
 C) What members of the Shape class are not accessible to member functions of the Circle class?
 ```
+### 15.4 What is the difference between private members and protected members?
+### 15.5 What is the difference between member access specification and class access specification?
+### 15.6 Suppose a program has the following class declaration:
+```
+// Declaration of CheckPoint class.
+class CheckPoint
+{
+private:
+int a;
+protected:
+int b;
+int c;
+void setA(int x) { a = x;}
+public:
+void setB(int y) { b = y;}
+void setC(int z) { c = z;}
+};
+```
+### Answer the following questions regarding the class:
+```
+A) Suppose another class, Quiz, is derived from the CheckPoint class. Here is
+the first line of its declaration:
+class Quiz : private CheckPoint
+Indicate whether each member of the CheckPoint class is private,
+protected, public, or inaccessible:
+a
+b
+c
+setA
+setB
+setC
+```
+```
+B) Suppose the Quiz class, derived from the CheckPoint class, is declared as
+class Quiz : protected Checkpoint
+Indicate whether each member of the CheckPoint class is private, protected,
+public, or inaccessible:
+a
+b
+c
+setA
+setB
+setC
+```
+```
+C) Suppose the Quiz class, derived from the CheckPoint class, is declared as
+class Quiz : public Checkpoint
+Indicate whether each member of the CheckPoint class is private, protected,
+public, or inaccessible:
+a
+b
+c
+setA
+setB
+setC
+```
+```
+D) Suppose the Quiz class, derived from the CheckPoint class, is declared as
+class Quiz : Checkpoint
+Is the CheckPoint class a private, public, or protected base class?
+```

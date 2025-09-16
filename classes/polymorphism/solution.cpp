@@ -1,45 +1,40 @@
 #include <iostream>
 using namespace std;
-class First
+class Base
 {
 protected:
-    int a;
+    int baseVar;
 
 public:
-    First(int x = 1)
+    Base(int val = 2)
     {
-        a = x;
+        baseVar = val;
     }
-    void twist()
+    int getVar()
     {
-        a *= 2;
-    }
-    int getVal()
-    {
-        twist();
-        return a;
+        return baseVar;
     }
 };
-class Second : public First
+class Derived : public Base
 {
 private:
-    int b;
+    int derivedVar;
 
 public:
-    Second(int y = 5)
+    Derived(int val = 100)
     {
-        b = y;
+        derivedVar = val;
     }
-    void twist()
+    int getVar()
     {
-        b *= 10;
+        return derivedVar;
     }
 };
 int main()
 {
-    First object1;
-    Second object2;
-    cout << object1.getVal() << endl;
-    cout << object2.getVal() << endl;
+    Base *optr = nullptr;
+    Derived object;
+    optr = &object;
+    cout << optr->getVar() << endl;
     return 0;
 }

@@ -25,50 +25,64 @@ Course *CreateCourse(string code, int credits)
     return c;
 }
 
-bool PrintCoursePlan(Course *c)
+bool PrintCoursePlan(Course *c, int step = 0)
 {
     if (!c)
-    {
         return true;
-    }
+
     if (c->isVisited)
     {
-        cout << "Error, Cycle Detected!" << endl;
-        cout << "Course Code: " << c->code << endl;
+        cout << "⚠️ Error: Cycle detected involving " << c->code << "!" << endl;
         return false;
     }
+
     if (c->isPrinted)
-    {
         return true;
-    }
+
     c->isVisited = true;
+
+    if (c->prerequisites && c->prerequisites->code.empty())
+    {
+        cout << "❌ Error: " << c->code << " requires a prerequisite course that is not offered." << endl;
+        return false;
+    }
+
+    if (c->corerequisite && c->corerequisite->code.empty())
+    {
+        cout << "❌ Error: " << c->code << " has a corequisite course that is not offered." << endl;
+        return false;
+    }
+
     if (c->prerequisites)
     {
-        if (!PrintCoursePlan(c->prerequisites))
-        {
+        if (!PrintCoursePlan(c->prerequisites, step))
             return false;
-        }
     }
-    // cout<<"Course Code "<<c->code<<" Credits: "<<c->credits;
-    cout << c->code << " {" << c->credits << " credits} ";
+
+    if (step == 0)
+        cout << "The student begins with ";
+    else
+        cout << "Next, the student takes ";
+
+    cout << c->code << " (" << c->credits << " credits). ";
+
     if (c->prerequisites)
-    {
-        cout << "[Presrequisite: " << c->prerequisites->code<<"]";
-    }
+        cout << "It requires " << c->prerequisites->code << " beforehand. ";
+
     if (c->corerequisite)
-    {
-        cout << "[CoreRequisite: " << c->corerequisite->code<<"]";
-    }
+        cout << "It must be taken alongside " << c->corerequisite->code << ". ";
+
     cout << endl;
+
     c->isPrinted = true;
-    c->isVisited = false;
+
     if (c->corerequisite)
     {
-        if (!PrintCoursePlan(c->corerequisite))
-        {
+        if (!PrintCoursePlan(c->corerequisite, step + 1))
             return false;
-        }
     }
+
+    c->isVisited = false;
     return true;
 }
 
@@ -93,10 +107,8 @@ int main()
     Course *temp = CS101;
     while (temp)
     {
-        if (!PrintCoursePlan(temp))
-        {
+        if (!PrintCoursePlan(temp, 0))
             return 0;
-        }
         temp = temp->next;
     }
 

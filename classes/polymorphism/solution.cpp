@@ -1,4 +1,4 @@
-#include <iostream.>
+#include <iostream>
 using namespace std;
 class First
 {
@@ -10,8 +10,13 @@ public:
     {
         a = x;
     }
+    void twist()
+    {
+        a *= 2;
+    }
     int getVal()
     {
+        twist();
         return a;
     }
 };
@@ -25,9 +30,9 @@ public:
     {
         b = y;
     }
-    int getVal()
+    void twist()
     {
-        return b;
+        b *= 10;
     }
 };
 int main()

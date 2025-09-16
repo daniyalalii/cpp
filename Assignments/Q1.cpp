@@ -1,5 +1,4 @@
 #include <iostream>
-#include <iomanip>
 using namespace std;
 
 struct Weather
@@ -47,7 +46,6 @@ void avgTemperature(Weather w[])
         }
     }
     double avgTemp = totalTemp / 7.0;
-    cout << fixed << showpoint << setprecision(2);
     cout << string(47, '-') << endl;
     cout << "Average Temperature during this week is: " << avgTemp << " °C" << endl;
     cout << "Maximum Temperature was: " << maxTemp << " °C on Day: " << Day << endl;
@@ -61,7 +59,6 @@ void avgHumidity(Weather w[])
         totalHumidity += w[i].humidity;
     }
     double avgHum = totalHumidity / 7.0;
-    cout << fixed << showpoint << setprecision(2);
     cout << string(47, '-') << endl;
     cout << "Average Humidity for first seven days: " << avgHum << endl;
     cout << string(47, '-') << endl;
@@ -81,7 +78,6 @@ void totalRainfall(Weather w[])
             Day = w[i].days;
         }
     }
-    cout << fixed << showpoint << setprecision(2);
     cout << string(47, '-') << endl;
     cout << "Total RainFall for this week is: " << totalRainfall << "mm" << endl;
     cout << "Maximum rainfall was: " << maxRainfall << "mm during Day: " << Day << endl;
@@ -89,19 +85,19 @@ void totalRainfall(Weather w[])
 }
 void printRecord(Weather w[])
 {
-    cout << left << setw(8) << "Day"
-         << setw(15) << "Temperature"
-         << setw(12) << "Humidity"
-         << setw(12) << "Rainfall" << endl;
-    cout << string(47, '-') << endl;
+    cout << left << "Day"
+          << "          Temperature"
+          << "            Humidity"
+          << "            Rainfall" << endl;
+    cout << string(67, '-') << endl;
     for (int i = 0; i < 7; i++)
     {
-        cout << left << setw(8) << (i + 1)
-             << setw(15) << fixed << setprecision(2) << w[i].temperature
-             << setw(12) << w[i].humidity
-             << setw(12) << w[i].rainfall << endl;
+        cout << left << (i + 1)
+             << "               " << w[i].temperature
+             << "                       "<< w[i].humidity
+             << "                     " << w[i].rainfall << endl;
     }
-    cout << string(47, '-') << endl;
+    cout << string(67, '-') << endl;
 }
 
 int main()

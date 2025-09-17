@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-class BankAccount
+class BankAccounts
 {
 private:
     double balance;
@@ -13,7 +13,7 @@ private:
     int annualInterestRate;
 
 public:
-    BankAccount(double bal = 0.0, int interestRate = 0)
+    BankAccounts(double bal = 0.0, int interestRate = 0)
     {
         balance = bal;
         annualInterestRate = interestRate;

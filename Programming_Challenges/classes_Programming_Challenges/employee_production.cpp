@@ -80,10 +80,32 @@ public:
         cout << "---------------------------------" << endl;
     }
 };
+
+class ShiftSupervisor : public Employee
+{
+private:
+    double salary;
+    double yearlyBonus;
+
+public:
+    ShiftSupervisor(string name, string number, string date, double sal, double bonus) : Employee(name, number, date)
+    {
+        salary = sal;
+        yearlyBonus = bonus;
+    }
+    void getSupervisorDate()
+    {
+        getData();
+        cout << "Salary: $" << salary << endl;
+        cout << "Yearly Bonus: $" << yearlyBonus << endl;
+        cout << "----------------------------------" << endl;
+    }
+};
 int main()
 {
-    ProductionWorker worker1;
     string name, number, date;
+    ProductionWorker worker1;
+    ShiftSupervisor supervisor1("Ben 10", "12345678", "12 Aug 2021", 100000, 50000);
     int shift;
     double rate;
     cout << "Enter your name: " << endl;
@@ -102,5 +124,6 @@ int main()
     cin >> rate;
     worker1.setPayRate(rate);
     worker1.getWorkerData();
+    supervisor1.getSupervisorDate();
     return 0;
 }

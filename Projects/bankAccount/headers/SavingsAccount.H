@@ -50,7 +50,7 @@ public:
         {
             int extraFees = getNumWithdrawal() - 4;
             setServiceCharges(extraFees);
-            BankAccounts::monthlyProc();
+            // BankAccounts::monthlyProc();
             if(getBalance()<25){
                 status = true;
                 cout<<"Your account goes on hold!"<<endl;

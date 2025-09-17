@@ -83,6 +83,13 @@ public:
         numDepositsPerMonth = 0;
         // monthlyServiceCharges = 0;
     }
+    virtual void display() const
+    {
+        cout << "Current Balance: $" << balance << endl;
+        cout << "Number of Deposits this month: " << numDepositsPerMonth << endl;
+        cout << "Number of Withdrawals this month: " << numWithdrawalsPerMonth << endl;
+        cout << "Monthly Service Charges: $" << monthlyServiceCharges << endl;
+    }
 };
 
 #endif

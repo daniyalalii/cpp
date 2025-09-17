@@ -1,6 +1,7 @@
-#include "BankAccount.H"
-#include "SavingsAccount.H"
-#include "CheckingAccount.H"
+#include "headers/BankAccount.h"
+#include "headers/SavingsAccount.h"
+#include "headers/CheckingAccount.h"
+
 
 void showMenu()
 {
@@ -126,7 +127,7 @@ int main()
             break;
         }
         case 0:
-            cout << "Exiting program." << endl;
+            cout << "Exiting program....." << endl;
             break;
         default:
             cout << "Invalid choice. Please try again." << endl;

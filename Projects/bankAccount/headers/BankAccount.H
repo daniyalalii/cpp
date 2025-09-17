@@ -18,9 +18,25 @@ public:
         balance = bal;
         annualInterestRate = interestRate;
     }
+    double getBalance() const
+    {
+        return balance;
+    }
+    void setBalance(double amount)
+    {
+        balance += amount;
+    }
+    int getNumWithdrawal() const
+    {
+        return numWithdrawalsPerMonth;
+    }
+    double getServiceCharges() const
+    {
+        return monthlyServiceCharges;
+    }
     virtual void setServiceCharges(double val)
     {
-        monthlyServiceCharges = val;
+        monthlyServiceCharges += val;
     }
     virtual void deposit(double amount)
     {
@@ -65,7 +81,7 @@ public:
         calculateInterest();
         numWithdrawalsPerMonth = 0;
         numDepositsPerMonth = 0;
-        // monthlyServiceCharges = 0; 
+        // monthlyServiceCharges = 0;
     }
 };
 

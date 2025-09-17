@@ -168,3 +168,22 @@ object’s current amount of fuel by 1 gallon for every 24 miles traveled. (The 
 ## ShiftSupervisor Class
 ### In a particular factory a shift supervisor is a salaried employee who supervises a shift. In addition to a salary, the shift supervisor earns a yearly bonus when his or her shift meets production goals. Design a ShiftSupervisor class that is derived from the Employee class you created in Programming Challenge 1. The ShiftSupervisor class should have a member variable that holds the annual salary and a member variable that holds the annual production bonus that a shift supervisor has earned. Write one or more constructors and the appropriate accessor and mutator functions for the class. Demonstrate the class by writing a program that uses a ShiftSupervisor object.
 ---
+## PersonData and CustomerData classes
+### Design a class named PersonData with the following member variables:
+```
+• lastName
+• firstName
+• address
+• city
+• state
+• zip
+• phone
+```
+### Write the appropriate accessor and mutator functions for these member variables. Next, design a class named CustomerData, which is derived from the PersonData class. The CustomerData class should have the following member variables:
+```
+• customerNumber
+• mailingList
+```
+### The customerNumber variable will be used to hold a unique integer for each customer.
+### The mailingList variable should be a bool. It will be set to true if the customer wishes to be on a mailing list, or false if the customer does not wish to be on a mailing list. Write appropriate accessor and mutator functions for these member variables.
+### Demonstrate an object of the CustomerData class in a simple program.

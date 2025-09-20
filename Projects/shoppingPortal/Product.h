@@ -28,35 +28,37 @@ public:
         category = cate;
         department = dep;
     }
-
-    void addProduct()
+    void setSKU(int id)
     {
-        cout << "------------------------------------" << endl;
-        cout << "Enter the SKU: ";
-        cin >> SKU;
-        cin.ignore();
-
-        cout << "Enter the name of product: ";
-        getline(cin, name);
-
-        cout << "Enter the description: ";
-        getline(cin, description);
-
-        cout << "Enter the sale price: ";
-        cin >> salePrice;
-
-        cout << "Enter the purchase price: ";
-        cin >> purchasePrice;
-
-        cout << "Enter the stock quantity: ";
-        cin >> stockQuantity;
-        cin.ignore();
-
-        cout << "Enter the category: ";
-        getline(cin, category);
-
-        cout << "Enter the department: ";
-        getline(cin, department);
+        SKU = id;
+    }
+    void setName(string n)
+    {
+        name = n;
+    }
+    void setDescription(string disc)
+    {
+        description = disc;
+    }
+    void setSalePrice(double price)
+    {
+        salePrice = price;
+    }
+    void setPurchasePrice(double price)
+    {
+        purchasePrice = price;
+    }
+    void setStockQuantity(int quantity)
+    {
+        stockQuantity = quantity;
+    }
+    void setCategory(string cat)
+    {
+        category = cat;
+    }
+    void setDepartment(string dep)
+    {
+        department = dep;
     }
 
     void updateStock(Product &other)

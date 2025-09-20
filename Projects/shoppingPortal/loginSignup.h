@@ -1,3 +1,5 @@
+#ifndef LOGIN_SIGNUP_H
+#define LOGIN_SIGNUP_H
 #include <iostream>
 #include <string>
 #include <iomanip>
@@ -7,14 +9,14 @@ class LoginSignUpSystem
 {
 private:
     int id;
-    string name;
+    string email;
     string password;
 
 public:
     LoginSignUpSystem(int i = 0, string n = "", string p = "")
     {
         id = i;
-        name = n;
+        email = n;
         password = p;
     }
     void setLogin(bool login)
@@ -28,9 +30,9 @@ public:
             cin >> key;
             id = key;
             cin.ignore();
-            cout << "Enter your name: " << endl;
+            cout << "Enter your Email: " << endl;
             getline(cin, n);
-            name = n;
+            email = n;
             cout << "Enter your Password: " << endl;
             getline(cin, pass);
             password = pass;
@@ -49,3 +51,5 @@ public:
         }
     }
 };
+
+#endif

@@ -32,6 +32,11 @@ public:
     {
         SKU = id;
     }
+
+    int getSKU() const
+    {
+        return SKU;
+    }
     void setName(string n)
     {
         name = n;
@@ -43,6 +48,10 @@ public:
     void setSalePrice(double price)
     {
         salePrice = price;
+    }
+    double getSalePrice() const
+    {
+        return salePrice;
     }
     void setPurchasePrice(double price)
     {

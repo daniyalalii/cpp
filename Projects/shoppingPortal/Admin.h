@@ -35,7 +35,7 @@ public:
         inventory.displayInventory();
     }
     void adminResponse(){
-        Inventory inventory;
+        extern Inventory inventory;
         Product product;
         vector<User> users;
         vector<Order> orders;
@@ -62,10 +62,11 @@ public:
                 break;
             case 3:
                 // Delete products
+                
                 cout<<"Enter product ID to delete: ";
-                int productId;
-                cin>>productId;
-                deleteProduct(inventory, productId);
+                int pId;
+                cin>>pId;
+                deleteProduct(inventory, pId);
                 break;
             case 4:
                 // Manage users
@@ -85,4 +86,4 @@ public:
     }
 };
 
-#endif 
+#endif

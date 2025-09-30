@@ -21,11 +21,22 @@ public:
         cart.removeItem(product.getSKU());
     }
     void checkout(){
+        extern Inventory inventory;
         double totalCost = 0.0;
         for (const auto &item : cart.cartItems) {
             totalCost += item.product.getSalePrice() * item.quantity;
+            // Update stock in inventory
+            Product* invProduct = inventory.getProductBySKU(item.product.getSKU());
+            if (invProduct) {
+                int newStock = invProduct->getStockQuantity() - item.quantity;
+                if (newStock < 0) newStock = 0; // Prevent negative stock
+                invProduct->setStockQuantity(newStock);
+            }
         }
+        totalCost -= totalCost * getDiscount(); // Apply discount
+        billAmount += totalCost;
         cout << "Total cost at checkout: $" << totalCost << endl;
+        cart.clearCart();
     }
     void viewOrderHistory() const{
         cout << "Viewing order history..." << endl;
@@ -42,62 +53,64 @@ public:
         cart.getCostofCart();
     }
     void customerResponse(){
-        cout<<"Enter your choice: "<<endl;
-        cout<<"0. Exit customer menu"<<endl;
-        cout<<"1. Add to cart"<<endl;
-        cout<<"2. Remove from cart"<<endl;
-        cout<<"3. Checkout"<<endl;
-        cout<<"4. View order history"<<endl;
+        extern Inventory inventory;
         int choice;
-        cin>>choice;
-        switch(choice){
-            case 1:
-                // Add to cart
-                {
-                    int sku;
-                    cout << "Enter SKU of product to add: ";
-                    cin >> sku;
-                    // Assuming you have an Inventory class with a getProductBySKU(int sku) method
-                    extern Inventory inventory; // Inventory instance declared elsewhere
-                    Product* product = inventory.getProductBySKU(sku);
-                    if (product) {
-                        addToCart(*product);
-                    } else {
-                        cout << "Product not found in inventory." << endl;
+        do {
+            cout << "\n=========== INVENTORY ===========\n";
+            inventory.displayInventory();
+            cout << "\nEnter your choice: " << endl;
+            cout << "0. Exit customer menu" << endl;
+            cout << "1. Add to cart" << endl;
+            cout << "2. Remove from cart" << endl;
+            cout << "3. Checkout" << endl;
+            cout << "4. View order history" << endl;
+            cin >> choice;
+            switch(choice){
+                case 1:
+                    // Add to cart
+                    {
+                        int sku;
+                        cout << "Enter SKU of product to add: ";
+                        cin >> sku;
+                        Product* product = inventory.getProductBySKU(sku);
+                        if (product) {
+                            addToCart(*product);
+                        } else {
+                            cout << "Product not found in inventory." << endl;
+                        }
                     }
-                }
-                break;
-            case 2:
-                // Remove from cart
-                {
-                    int sku;
-                    cout << "Enter SKU of product to remove: ";
-                    cin >> sku;
-                    // Assuming you have an Inventory class with a getProductBySKU(int sku) method
-                    extern Inventory inventory; // Inventory instance declared elsewhere
-                    Product* product = inventory.getProductBySKU(sku);
-                    if (product) {
-                        removeFromCart(*product);
-                    } else {
-                        cout << "Product not found in inventory." << endl;
+                    break;
+                case 2:
+                    // Remove from cart
+                    {
+                        int sku;
+                        cout << "Enter SKU of product to remove: ";
+                        cin >> sku;
+                        Product* product = inventory.getProductBySKU(sku);
+                        if (product) {
+                            removeFromCart(*product);
+                        } else {
+                            cout << "Product not found in inventory." << endl;
+                        }
                     }
-                }
-                break;
-            case 3:
-                // Checkout
-                checkout();
-                break;
-            case 4:
-                // View order history
-                viewOrderHistory();
-                break;
-            case 0:
-                cout << "Exiting customer menu." << endl;
-                break;
-            default:
-                cout << "Invalid choice." << endl;
-                break;
-        }
+                    break;
+                case 3:
+                    // Checkout
+                    checkout();
+                    cout << "Thank you for shopping! Returning to main menu..." << endl;
+                    return;
+                case 4:
+                    // View order history
+                    viewOrderHistory();
+                    break;
+                case 0:
+                    cout << "Exiting customer menu." << endl;
+                    break;
+                default:
+                    cout << "Invalid choice." << endl;
+                    break;
+            }
+        } while (choice != 0);
     }
 };
 

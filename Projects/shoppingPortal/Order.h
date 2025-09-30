@@ -48,6 +48,30 @@ public:
         }
         cout << endl;
     }
+    void fulfillOrder()
+    {
+        if (status == OrderStatus::Pending)
+        {
+            updateStatus(OrderStatus::Shipped);
+            cout << "Order " << orderID << " has been shipped." << endl;
+        }
+        else
+        {
+            cout << "Order cannot be fulfilled. Current status: ";
+            switch (status)
+            {
+                case OrderStatus::Shipped: cout << "Shipped"; break;
+                case OrderStatus::Delivered: cout << "Delivered"; break;
+                case OrderStatus::Cancelled: cout << "Cancelled"; break;
+                default: break;
+            }
+            cout << endl;
+        }
+    }
+    int getOrderID() const
+    {
+        return orderID;
+    }
 };
 
 #endif

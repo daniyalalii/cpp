@@ -54,6 +54,7 @@ public:
         {
             updateStatus(OrderStatus::Shipped);
             cout << "Order " << orderID << " has been shipped." << endl;
+            totalAmount *= 1.05; // Adding a 5% shipping fee
         }
         else
         {
@@ -71,6 +72,10 @@ public:
     int getOrderID() const
     {
         return orderID;
+    }
+    double getTotalAmount() const
+    {
+        return totalAmount;
     }
 };
 

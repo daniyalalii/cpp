@@ -82,7 +82,7 @@ public:
         }
     }
 
-    void updateQunatity(int sku)
+    void updateQuantity(int sku)
     {
         for (auto &p : products)
         {

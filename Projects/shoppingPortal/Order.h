@@ -3,7 +3,7 @@
 
 #include "./Cart.h"
 #include "./Customer.h"
-#include "./Item.h"
+// #include "./Item.h"
 using namespace std;
 
 enum class OrderStatus { Pending, Shipped, Delivered, Cancelled };
@@ -13,13 +13,13 @@ class Order
 private:
     int orderID;
     Customer customer;
-    vector<Cart> items;
+    Cart cart;
     double totalAmount;
     OrderStatus status;
 
 public:
-    Order(int orderID, const Customer& customer, const vector<Cart>& items, double totalAmount)
-        : orderID(orderID), customer(customer), items(items), totalAmount(totalAmount), status(OrderStatus::Pending) {}
+    Order(int orderID, const Customer& customer, const Cart& cart, double totalAmount)
+        : orderID(orderID), customer(customer), cart(cart), totalAmount(totalAmount), status(OrderStatus::Pending) {}
 
     void updateStatus(OrderStatus newStatus)
     {
@@ -33,10 +33,7 @@ public:
         customer.displayCustomerInfo();
         cout << "--------------------------------------\n";
         cout << "Items:\n";
-        for (const auto& item : items)
-        {
-            item.printItemsDescription();
-        }
+        cart.printItemsDescription();
         cout << "Total Amount: $" << totalAmount << endl;
         cout << "Status: ";
         switch (status)

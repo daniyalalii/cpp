@@ -76,7 +76,7 @@ public:
 
     void vendorResponse()
     {
-        Inventory inventory;
+        extern Inventory inventory;
         Order order(1, Customer(), {}, 0.0);
         cout << "Enter your choice: " << endl;
         cout << "0. Exit vendor menu" << endl;

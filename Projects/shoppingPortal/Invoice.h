@@ -7,10 +7,10 @@ class Invoice
 {
     private:
     int invoiceID;
-    int totalAmount;
+    double totalAmount;
     vector<Cart> items;
     public:
-    Invoice(int id = 0, int amount = 0, const vector<Cart>& items = {})
+    Invoice(int id = 0, double amount = 0.0, const vector<Cart>& items = {})
     {
         invoiceID = id;
         totalAmount = amount;
@@ -33,7 +33,7 @@ class Invoice
     {
         return invoiceID;
     }
-    int getTotalAmount() const
+    double getTotalAmount() const
     {
         return totalAmount;
     }

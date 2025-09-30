@@ -2,7 +2,7 @@
 #define CART_H
 #include "./Product.h"
 #include <vector>
-
+#include <algorithm>
 class CartItems
 {
 public:
@@ -21,7 +21,7 @@ class Cart
         cartItems.emplace_back(product, quantity);
         cout << "✅ Product with SKU " << product.getSKU() << " added to cart!" << endl;
     }
-
+    
     void removeItem(int sku)
     {
         auto it = remove_if(cartItems.begin(), cartItems.end(),

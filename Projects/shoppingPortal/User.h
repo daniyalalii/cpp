@@ -44,7 +44,7 @@ public:
         cout << "Email: " << email << endl;
         cout << "Password: " << password << endl;
         cout << "User Id: " << userID << endl;
-        cout << "Phone Number: " << endl;
+        cout << "Phone Number: " << phoneNumber << endl;
         cout << "Address: " << address << endl;
     }
 };

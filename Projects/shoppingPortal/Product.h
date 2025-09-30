@@ -69,7 +69,10 @@ public:
     {
         department = dep;
     }
-
+    int getStockQuantity() const
+    {
+        return stockQuantity;
+    }
     void updateStock(Product &other)
     {
         if (other.SKU == SKU)

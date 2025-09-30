@@ -2,7 +2,11 @@
 #include "Admin.h"
 #include "Customer.h"
 #include "Vendor.h"
+#include "Inventory.h"
+
 using namespace std;
+
+Inventory inventory; // Global inventory instance
 
 void showMenu()
 {

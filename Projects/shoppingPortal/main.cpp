@@ -1,10 +1,13 @@
 #include <iostream>
+#include "Admin.h"
+#include "Customer.h"
+#include "Vendor.h"
 using namespace std;
 
 void showMenu()
 {
     cout << "-------------------------" << endl;
-    cout << "Welcome to Shopping Prtal System" << endl;
+    cout << "Welcome to Shopping Portal System" << endl;
     cout << "Enter your Login Type" << endl;
     cout << "1- Admin" << endl;
     cout << "2- Customer" << endl;
@@ -22,17 +25,20 @@ int main()
         {
         case 1:
         {
-            // showAdmin()
+            Admin admin;
+            admin.adminResponse();
             break;
         }
         case 2:
         {
-            // showCustomer()
+            Customer customer;
+            customer.customerResponse();
             break;
         }
         case 3:
         {
-            // showVendor()
+            Vendor vendor;
+            vendor.vendorResponse();
             break;
         }
         case 0:

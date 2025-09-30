@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "./Product.h"
+#include <algorithm>
 
 class Inventory : public Product
 {
@@ -65,7 +66,17 @@ public:
             p.displayStock();
         }
     }
-
+    int getStockQuantity(int sku) const
+    {
+        for (const auto &p : products)
+        {
+            if (p.getSKU() == sku)
+            {
+                return p.getStockQuantity();
+            }
+        }
+        return 0;
+    }
     void deleteProduct(int sku)
     {
         auto it = remove_if(products.begin(), products.end(), [sku](const Product &p)

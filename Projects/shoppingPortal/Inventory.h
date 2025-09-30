@@ -107,6 +107,22 @@ public:
         }
         cout << "❌ Product with SKU " << sku << " not found!" << endl;
     }
+    Product* getProductBySKU(int sku) {
+        for (auto &p : products) {
+            if (p.getSKU() == sku) {
+                return &p;
+            }
+        }
+        return nullptr; // Return nullptr if product not found
+    }
+
+    vector<Product> getInventory(){
+        vector<Product> inventory;
+        for (const auto &p : products) {
+            inventory.push_back(p);
+        }
+        return inventory;
+    }
 };
 
 #endif

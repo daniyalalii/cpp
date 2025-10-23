@@ -47,3 +47,56 @@ Forgetting to release memory should result in “ghost items” appearing in glo
 intentional design to test proper destructor logic.
 A proper menu for each functionality is required.
 ---
+# Question # 2
+The software firm BlockVerse Technologies plans to create a simplified simulation of a Crypto
+Wallet Network to demonstrate how cryptocurrency wallets, transactions, and mining
+operations can be modeled using object-oriented programming concepts. The simulation will not
+use inheritance or polymorphism. Instead, it will focus entirely on constructors, destructors,
+copy constructors, static members, operator overloading, friend functions, dynamic memory
+handling, arrays, pointers, and recursion.
+Each wallet represents a unique user in the crypto system. Every wallet must have a dynamically
+allocated owner name, an automatically assigned wallet ID, and a randomly generated private
+key (a short random string of alphanumeric characters). A wallet maintains a current BTC balance
+and a transaction history stored in a dynamically allocated floating-point array. Each deposit,
+withdrawal, or transfer should expand this history by one entry.
+The system includes a global Exchange entity that maintains static information such as the BTCto-USD conversion rate, the total BTC in circulation, and the number of active wallets. The
+exchange rate should only be adjustable via a friend function, simulating restricted
+administrative privileges. Whenever a wallet’s balance changes, the total BTC in circulation must
+automatically update to maintain consistency.
+Wallets should support intuitive operator-based functionality:
+• += to deposit BTC into a wallet.
+• -= to withdraw BTC (with balance validation).
+• ++ and -- to simulate market volatility (increasing or decreasing balance slightly).
+• > and < to compare wallet balances.• >> to transfer BTC from one wallet to another.
+• [] to access a transaction amount by index in the history.
+When a wallet is copied, the copy constructor must assign a new wallet ID and private key while
+retaining the BTC balance but resetting the transaction history. Similarly, the assignment
+operator must ensure deep copies to prevent shared transaction arrays. Destructors should
+securely erase private keys, deallocate all dynamic memory, and announce the wallet’s secure
+destruction.
+Recursive Mining Mechanism
+Each wallet also supports a mining feature that allows earning new BTC through computational
+work. This mining operation must be implemented using recursion, arrays, and pointers as
+described below — no alternative logic is allowed.
+A function named mineCoins() should exist inside the wallet class. It will simulate mining using
+an integer array that represents computational “blocks.” The mining function accepts:
+1. A pointer to an integer array (representing block data).
+2. The total number of blocks in the array.
+3. A “target” number to find (e.g., 7).
+Mining begins from index 0 and uses recursion to check each block sequentially until it finds the
+target value.
+• If the target is found, the function should print the index of the successful block and return
+that index.
+• If not found, the recursion should proceed to the next index.
+• If the end of the array is reached with no success, the function should return -1, indicating
+failure.
+• Each recursive call should print a message such as “Checking block #i...” to visualize
+recursion depth.
+For every successful mining attempt, the wallet earns a small random BTC reward (between 0.01
+and 0.05 BTC). This reward is automatically added to the wallet using the overloaded += operator,
+and the total BTC in circulation must be updated via the Exchange.
+The mining array must be dynamically allocated using pointers (e.g., int* blocks = new int[size];),
+filled with random integers between 0 and 9, and passed to the recursive mining function. After
+mining completes, the array should be properly deallocated to prevent memory leaks.
+Every wallet object’s destructor should execute automatically at program termination, ensuring
+all private keys and transaction histories are securely deleted.A proper menu for each functionality is required

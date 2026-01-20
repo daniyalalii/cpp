@@ -20,7 +20,7 @@ void printList(Node* head){
     cout<<"NULL"<<endl;
 }
 
-Node* reverseLinkedList(Node*& head){
+Node* reverseLinkedList(Node* head){
     if(head==NULL) return head;
     Node* current = head;
     Node* prev = NULL;

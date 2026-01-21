@@ -29,6 +29,27 @@ bool detectCycle(Node* head){
     return true;
 }
 
+Node* cycleStart(Node* head){
+    if(head==NULL) return NULL;
+    Node* fast = head;
+    Node* slow = head;
+
+    while(fast != NULL && fast->next != NULL){
+        slow = slow->next;
+        fast = fast->next->next;
+        if(slow==fast) break;
+    }
+
+    if(fast==NULL || fast->next==NULL) return NULL;
+
+    slow = head;
+    while(slow!=head){
+        slow = slow->next;
+        fast = fast->next;
+    }
+    return slow;
+}
+
 int main(){
     Node* head = new Node{1, nullptr};
     Node* sec = new Node{2,nullptr};
@@ -49,8 +70,11 @@ int main(){
     }
     else{
         cout<<"there cycle in the list"<<endl;
+    Node* start = cycleStart(head);
+    cout<<"Cycle starts and Node: "<<start->val<<endl;
     }
 
-    printList(head);
+    
+    // printList(head);
     return 0;
 }

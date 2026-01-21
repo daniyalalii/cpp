@@ -50,6 +50,17 @@ Node* cycleStart(Node* head){
     return slow;
 }
 
+void removeCycle(Node* head){
+    Node* start = cycleStart(head);
+
+    if(start == NULL) return;
+    Node* temp = start;
+    while(temp->next!=start){
+        temp = temp->next;
+    }
+    temp->next = NULL;
+}
+
 int main(){
     Node* head = new Node{1, nullptr};
     Node* sec = new Node{2,nullptr};
@@ -63,18 +74,21 @@ int main(){
     th->next = fr;
     fr->next = fv;
     fv->next = sx;
-    sx->next = head;
+    // sx->next = head;
 
     if(detectCycle(head)){
         cout<<"List does not contain cycle"<<endl;
     }
     else{
-        cout<<"there cycle in the list"<<endl;
+    cout<<"there cycle in the list"<<endl;
     Node* start = cycleStart(head);
     cout<<"Cycle starts and Node: "<<start->val<<endl;
+    cout<<"Removing the cycle: "<<endl;
+    removeCycle(head);
     }
 
     
-    // printList(head);
+    
+    printList(head);
     return 0;
 }

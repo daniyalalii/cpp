@@ -61,6 +61,29 @@ void removeCycle(Node* head){
     temp->next = NULL;
 }
 
+int countCycleLength(Node* head){
+    if(head==NULL) return 0;
+
+    Node* slow = head;
+    Node* fast = head;
+
+    while(fast!=NULL && fast->next!=NULL){
+        slow = slow->next;
+        fast = fast->next->next;
+
+        if(slow==fast){
+            int count = 1;
+            fast = fast->next;
+            while(slow!=fast){
+                count++;
+                fast = fast->next;
+            }
+            return count;
+        }
+    }
+    return 0;
+}
+
 int main(){
     Node* head = new Node{1, nullptr};
     Node* sec = new Node{2,nullptr};
@@ -74,7 +97,7 @@ int main(){
     th->next = fr;
     fr->next = fv;
     fv->next = sx;
-    // sx->next = head;
+    sx->next = head;
 
     if(detectCycle(head)){
         cout<<"List does not contain cycle"<<endl;
@@ -83,10 +106,11 @@ int main(){
     cout<<"there cycle in the list"<<endl;
     Node* start = cycleStart(head);
     cout<<"Cycle starts and Node: "<<start->val<<endl;
+    int length = countCycleLength(head);
+    cout<<"Length of the cycle is: "<<length<<endl;
     cout<<"Removing the cycle: "<<endl;
     removeCycle(head);
     }
-
     
     
     printList(head);

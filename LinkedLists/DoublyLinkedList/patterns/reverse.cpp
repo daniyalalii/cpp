@@ -57,7 +57,7 @@ void reverseList(doublyLL& list){
     Node* temp = NULL;
     Node* curr = list.head;
     while(curr!=NULL){
-        temp = curr->next;
+        temp = curr->prev;
         curr->prev = curr->next;
         curr->next = temp;
         curr = curr->prev;

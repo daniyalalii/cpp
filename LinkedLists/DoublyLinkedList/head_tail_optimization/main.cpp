@@ -87,24 +87,65 @@ void deleteNode(doublyLL& list, Node* x){
     delete x;
 }
 
+void sortedInsert(doublyLL& list, int val){
+    Node* n = new Node(val);
+    // handling empty list
+    if(!list.head){
+        list.head = list.tail = n;
+        return;
+    }
+    // insert at head
+    if(val<=list.head->data){
+        n->next = list.head;
+        list.head->prev = n;
+        list.head = n;
+        return;
+    }
+    // insert at tail
+    if(val>=list.tail->data){
+        list.tail->next = n;
+        n->prev = list.tail;
+        list.tail = n;
+        return;
+    }
+
+    Node* curr = list.head;
+    while(curr && curr->data<val){
+        curr = curr->next;
+    }
+
+    n->next = curr;
+    n->prev = curr->prev;
+    curr->prev = n;
+    curr->prev->next = n;
+}
+
 
 int main(){
     doublyLL list;
-    insertAtHead(list,1);
-    insertAtHead(list,2);
-    insertAtTail(list,3);
-    insertAtTail(list,4);
-    insertAtTail(list,5);
+    insertAtHead(list,10);
+    insertAtHead(list,5);
+    insertAtTail(list,15);
+    insertAtTail(list,20);
+    insertAtTail(list,30);
     printList(list);
-    cout<<"Deleting head"<<endl;
-    deleteHead(list);
+
+    // cout<<"Deleting head"<<endl;
+    // deleteHead(list);
+    // printList(list);
+    // cout<<"Deleting tail"<<endl;
+    // deleteTail(list);
+    // printList(list);
+    // Node* mid = list.head->next;
+    // cout<<"Deleting mid node"<<endl;
+    // deleteNode(list,mid);
+    // printList(list);
+
+    sortedInsert(list,13);
+    sortedInsert(list,1);
+    sortedInsert(list,50);
+    sortedInsert(list, 25);
     printList(list);
-    cout<<"Deleting tail"<<endl;
-    deleteTail(list);
-    printList(list);
-    Node* mid = list.head->next;
-    cout<<"Deleting mid node"<<endl;
-    deleteNode(list,mid);
-    printList(list);
+
     return 0;
 }
